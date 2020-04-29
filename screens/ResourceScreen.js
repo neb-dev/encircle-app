@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView, Platform, StatusBar } from 'react-native';
 
 import { WebView } from 'react-native-webview';
 
@@ -56,7 +56,7 @@ const ResourceScreen = (props) => {
   }
 
   return(
-    <SafeAreaView style={{flex: 1}}>
+    <SafeAreaView style={{flex: 1, paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0}}>
       <WebView
       style={{flex: 1}}
       androidHardwareAccelerationDisabled
